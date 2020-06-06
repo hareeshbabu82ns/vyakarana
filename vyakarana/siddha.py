@@ -7,9 +7,9 @@
 
     :license: MIT and BSD
 """
-from sounds import Sounds, Sound, Pratyahara
-from terms import Upadesha
-from util import SoundEditor, SoundIndex
+from .sounds import Sounds, Sound, Pratyahara
+from .terms import Upadesha
+from .util import SoundEditor, SoundIndex
 
 
 def asiddha_helper(state):
@@ -34,8 +34,8 @@ def asiddha_helper(state):
     editor = SoundEditor(state)
     for c in editor:
         p = c.prev
-        n = c.next
-        n2 = n.next
+        n = c.__next__
+        n2 = n.__next__
 
         w, x, y, z = (p.value, c.value, n.value, n2.value)
 

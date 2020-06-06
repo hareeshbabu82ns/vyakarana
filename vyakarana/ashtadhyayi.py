@@ -8,14 +8,14 @@
     :license: MIT and BSD
 """
 
-import expand
-import reranking
-import sandhi
-import siddha
-import trees
+from . import expand
+from . import reranking
+from . import sandhi
+from . import siddha
+from . import trees
 
 from . import logger
-from derivations import State
+from .derivations import State
 
 
 class Ashtadhyayi(object):

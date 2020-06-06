@@ -14,7 +14,7 @@
     :license: MIT and BSD
 """
 
-from sounds import Sound, Sounds
+from .sounds import Sound, Sounds
 
 conflicts = [
     ('dirgha', 'hrasva'),
@@ -226,7 +226,7 @@ def tasya(sthani, adi=False):
             except AttributeError:
                 new_value = sthani + term_value[1:]
 
-        elif isinstance(sthani, basestring):
+        elif isinstance(sthani, str):
             # 1.1.52 alo 'ntyasya
             # 1.1.55 anekālśit sarvasya
             if len(sthani) <= 1:
@@ -316,7 +316,7 @@ def upadha(result):
 
 @Operator.parameterized
 def yathasamkhya(targets, results):
-    converter = dict(zip(targets, results))
+    converter = dict(list(zip(targets, results)))
 
     def func(state, index, locus):
         cur = state[index]
@@ -331,7 +331,7 @@ def yathasamkhya(targets, results):
 
 @DataOperator.no_params
 def dirgha(value):
-    converter = dict(zip('aiufx', 'AIUFX'))
+    converter = dict(list(zip('aiufx', 'AIUFX')))
     letters = list(value)
     for i, L in enumerate(letters):
         if L in converter:
@@ -355,7 +355,7 @@ def guna(state, index, locus=None):
 
     # 1.1.2 adeG guNaH
     # 1.1.3 iko guNavRddhI
-    converter = dict(zip('iIuUfFxX', 'eeooaaaa'))
+    converter = dict(list(zip('iIuUfFxX', 'eeooaaaa')))
     letters = list(cur.value)
     for i, L in enumerate(letters):
         if L in converter:
@@ -370,7 +370,7 @@ def guna(state, index, locus=None):
 
 @DataOperator.no_params
 def hrasva(value):
-    converter = dict(zip('AIUFXeEoO', 'aiufxiiuu'))
+    converter = dict(list(zip('AIUFXeEoO', 'aiufxiiuu')))
     letters = list(value)
     for i, L in enumerate(letters):
         if L in converter:
@@ -421,7 +421,7 @@ def vrddhi(state, index, locus=None):
 
     # 1.1.1 vRddhir Adaic
     # 1.1.3 iko guNavRddhI
-    converter = dict(zip('iIuUfFxX', 'EEOOAAAA'))
+    converter = dict(list(zip('iIuUfFxX', 'EEOOAAAA')))
     letters = list(cur.value)
     for i, L in enumerate(letters):
         if L in converter:
@@ -437,7 +437,7 @@ def vrddhi(state, index, locus=None):
 @Operator.no_params
 def force_guna(state, index, locus=None):
     cur = state[index]
-    converter = dict(zip('iIuUfFxX', 'eeooaaaa'))
+    converter = dict(list(zip('iIuUfFxX', 'eeooaaaa')))
     letters = list(cur.value)
     for i, L in enumerate(letters):
         if L in converter:

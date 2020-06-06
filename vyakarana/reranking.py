@@ -18,8 +18,8 @@
     :license: MIT and BSD
 """
 
-import filters as F
-from rules import Rule
+from . import filters as F
+from .rules import Rule
 
 #: Artificially boosted rules.
 BOOST = ['6.1.45', '6.1.64', '6.1.65']

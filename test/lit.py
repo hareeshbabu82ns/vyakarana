@@ -9,7 +9,7 @@
 """
 
 import pytest
-from helpers import verb_data
+from .helpers import verb_data
 
 
 @pytest.mark.parametrize(('expected', 'actual'), verb_data('lit.csv', 'li~w'))

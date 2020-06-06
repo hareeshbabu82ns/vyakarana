@@ -16,8 +16,8 @@ from vyakarana.terms import *
 
 
 def test_iter_group():
-    items = range(18)
-    groups = [range(6), range(6, 12), range(12, 18)]
+    items = list(range(18))
+    groups = [list(range(6)), list(range(6, 12)), list(range(12, 18))]
     assert list(iter_group(items, 6)) == groups
 
 
@@ -52,7 +52,7 @@ def test_sound_editor_prev_next(editor_data):
     data, terms, state, editor = editor_data
     for i, index in enumerate(editor):
         prev = index.prev
-        next = index.next
+        next = index.__next__
         if i > 0:
             assert prev.value == data[i - 1]
         if i < len(data) - 1:

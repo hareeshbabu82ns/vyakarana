@@ -11,7 +11,7 @@
 
 def memoize(c):
     cache = {}
-    get_key = lambda a, kw: tuple(a) + (frozenset(kw.items()),)
+    get_key = lambda a, kw: tuple(a) + (frozenset(list(kw.items())),)
 
     def memoized(*a, **kw):
         key = get_key(a, kw)
@@ -204,7 +204,7 @@ class Sounds(SoundCollection):
 
     def __init__(self, phrase):
         self.name = phrase
-        if isinstance(phrase, basestring):
+        if isinstance(phrase, str):
             items = phrase.split()
         else:
             items = phrase

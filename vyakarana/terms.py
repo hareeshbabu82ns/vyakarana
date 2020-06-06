@@ -11,7 +11,7 @@
 import re
 from collections import namedtuple
 
-from sounds import Sounds
+from .sounds import Sounds
 
 
 _DataSpace = namedtuple('_DataSpace',

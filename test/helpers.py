@@ -52,7 +52,7 @@ def load_forms(filename):
         else:
             data[dhatu] = [set(x.split('/')) if x != '_' else set() for x in paradigm]
 
-    for dhatu, paradigm in data.items():
+    for dhatu, paradigm in list(data.items()):
         purusha = ['prathama', 'madhyama', 'uttama']
         vacana = ['ekavacana', 'dvivacana', 'bahuvacana']
 
@@ -77,7 +77,7 @@ def verb_data(filename, la):
         d = Upadesha.as_dhatu(dhatu)
         p = Vibhakti(la).add_samjna(person, number)
         actual = set(ash.derive([d, p]))
-        print actual
+        print(actual)
 
         test_cases.append((expected, actual))
 

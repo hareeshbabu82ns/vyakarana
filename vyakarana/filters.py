@@ -16,10 +16,10 @@
 
 from collections import defaultdict
 
-import lists
-from dhatupatha import DHATUPATHA as DP
-from sounds import Sounds
-from terms import Upadesha
+from . import lists
+from .dhatupatha import DHATUPATHA as DP
+from .sounds import Sounds
+from .terms import Upadesha
 
 FILTER_NAME_MAX_ARGS = 4
 DHATU_SET = set(DP.all_dhatu)
@@ -622,7 +622,7 @@ def auto(*data):
             return allow_all
 
         # String selector: value, samjna, or sound
-        if isinstance(datum, basestring):
+        if isinstance(datum, str):
             if datum in lists.SAMJNA or datum in lists.IT:
                 key = 'samjna'
             elif datum in lists.SOUNDS:

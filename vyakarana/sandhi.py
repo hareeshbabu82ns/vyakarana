@@ -1,8 +1,8 @@
-import operators as O
-from derivations import State
-from sounds import Sound, Sounds
-from terms import Upadesha
-from util import SoundEditor
+from . import operators as O
+from .derivations import State
+from .sounds import Sound, Sounds
+from .terms import Upadesha
+from .util import SoundEditor
 
 
 def convert(op):
@@ -20,7 +20,7 @@ vrddhi = convert(O.vrddhi)
 def apply(state):
     editor = SoundEditor(state)
     for cur in editor:
-        next = cur.next
+        next = cur.__next__
         if next.value is None:
             continue
 
@@ -58,7 +58,7 @@ def ac_sandhi(x, y):
 
     # 6.1.78 eco 'yavAyAvaH
     elif x in Sounds('ec') and y in Sounds('ac'):
-        converter = dict(zip('eEoO', 'ay Ay av Av'.split()))
+        converter = dict(list(zip('eEoO', 'ay Ay av Av'.split())))
         x = converter[x]
 
     elif x in 'aA' and y in Sounds('ic'):

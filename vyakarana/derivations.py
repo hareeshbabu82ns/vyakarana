@@ -58,7 +58,7 @@ class State(object):
             append('    lakshana: %s' % sorted(item.lakshana))
             append('    ops     : %s' % sorted(item.ops))
         append('---------------------')
-        print '\n'.join(data)
+        print('\n'.join(data))
 
     def copy(self):
         return State(self.terms[:], self.history[:])

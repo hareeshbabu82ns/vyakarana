@@ -20,7 +20,7 @@ def iter_group(items, n):
 def iter_pairwise(items):
     x, y = itertools.tee(items)
     next(y, None)
-    return itertools.izip(x, y)
+    return zip(x, y)
 
 
 class SoundEditor(object):

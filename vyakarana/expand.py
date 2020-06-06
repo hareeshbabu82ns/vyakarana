@@ -19,11 +19,11 @@
 
 import importlib
 
-import filters as F
-import lists
-import operators as O
-from templates import Anuvrtti, RuleStub, Option, Shesha
-from rules import Rule
+from . import filters as F
+from . import lists
+from . import operators as O
+from .templates import Anuvrtti, RuleStub, Option, Shesha
+from .rules import Rule
 
 
 def fetch_all_stubs():

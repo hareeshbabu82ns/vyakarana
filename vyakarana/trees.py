@@ -11,7 +11,7 @@
 import itertools
 from collections import defaultdict
 
-from templates import *
+from .templates import *
 
 
 def find_apavada_rules(rules):
@@ -61,7 +61,7 @@ class RuleTree(object):
         if ranker is not None:
             self.ranked_rules = sorted(rules, key=ranker, reverse=True)
             apavadas = find_apavada_rules(rules)
-            for rule, values in apavadas.iteritems():
+            for rule, values in apavadas.items():
                 rule.apavada = values
                 for a in values:
                     a.utsarga.append(rule)
@@ -87,7 +87,7 @@ class RuleTree(object):
                 self.rules.append(rule)
 
         # Sort from most general to most specific.
-        buckets = sorted(feature_map.iteritems(), key=lambda p: -len(p[1]))
+        buckets = sorted(iter(feature_map.items()), key=lambda p: -len(p[1]))
 
         seen = set()
         for feat, rule_list in buckets:
@@ -102,14 +102,14 @@ class RuleTree(object):
     def __len__(self):
         """The number of rules in the tree."""
         self_len = len(self.rules)
-        return self_len + sum(len(v) for k, v in self.features.iteritems())
+        return self_len + sum(len(v) for k, v in self.features.items())
 
     def candidates(self, state):
         """Generate all rule-index pairs that could apply to the state.
 
         :param state: the current state
         """
-        state_indices = range(len(state))
+        state_indices = list(range(len(state)))
         candidates = [self.select(state, i) for i in state_indices]
 
         for i, ra in enumerate(self.ranked_rules):
@@ -121,9 +121,9 @@ class RuleTree(object):
         """Pretty-print the tree."""
         if self.rules:
             rule_token = [x.name for x in self.rules]
-            print '    ' * depth, '[%s] %s' % (len(self.rules), rule_token)
-        for feature, tree in self.features.iteritems():
-            print '    ' * depth, '[%s]' % len(tree), feature
+            print('    ' * depth, '[%s] %s' % (len(self.rules), rule_token))
+        for feature, tree in self.features.items():
+            print('    ' * depth, '[%s]' % len(tree), feature)
             tree.pprint(depth + 1)
 
     def select(self, state, index):
@@ -134,7 +134,7 @@ class RuleTree(object):
         """
         selection = set(self.rules)
 
-        for feature, tree in self.features.iteritems():
+        for feature, tree in self.features.items():
             filt, i = feature
             j = index + i
             if j >= 0 and filt.allows(state, j):

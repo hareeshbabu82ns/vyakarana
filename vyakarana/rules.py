@@ -16,7 +16,7 @@
     :license: MIT and BSD
 """
 
-from templates import Na
+from .templates import Na
 
 
 class Rule(object):
@@ -143,7 +143,7 @@ class Rule(object):
             return False
 
         # Condition 2
-        filter_pairs = zip(self.filters, other.filters)
+        filter_pairs = list(zip(self.filters, other.filters))
         if not all(f2.subset_of(f1) for f1, f2 in filter_pairs):
             return False
 
@@ -166,4 +166,4 @@ class Rule(object):
         append('    Utsarga  : %r' % (self.utsarga,))
         append('    Apavada  : %r' % (self.apavada,))
         append('')
-        print '\n'.join(data)
+        print('\n'.join(data))
