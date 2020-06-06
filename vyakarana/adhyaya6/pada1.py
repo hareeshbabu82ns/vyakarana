@@ -17,11 +17,11 @@ from ..terms import Upadesha
 f = F.auto
 
 #: 6.1.15
-VACI_SVAPI = f(*['va\ca~', 'Yizva\pa~'] + DP.dhatu_list('ya\\ja~^'))
+VACI_SVAPI = f(*['va\\ca~', 'Yizva\\pa~'] + DP.dhatu_list('ya\\ja~^'))
 
 #: 6.1.16
-GRAHI_JYA = f(*['graha~^', 'jyA\\', 'vaya~\\', 'vya\Da~', 'vaSa~',
-                'vyaca~', 'o~vraScU~', 'pra\cCa~', 'Bra\sja~^'])
+GRAHI_JYA = f(*['graha~^', 'jyA\\', 'vaya~\\', 'vya\\Da~', 'vaSa~',
+                'vyaca~', 'o~vraScU~', 'pra\\cCa~', 'Bra\\sja~^'])
 
 
 @O.Operator.no_params

@@ -13,8 +13,8 @@ from ..templates import *
 f = F.auto
 
 
-_78_roots = ['pA\\', 'GrA\\', 'DmA\\', 'zWA\\', 'mnA\\', 'dA\R',
-             'df\Si~r', 'f\\', 'sf\\', 'Sa\dx~', 'za\dx~']
+_78_roots = ['pA\\', 'GrA\\', 'DmA\\', 'zWA\\', 'mnA\\', 'dA\\R',
+             'df\\Si~r', 'f\\', 'sf\\', 'Sa\\dx~', 'za\\dx~']
 
 
 _78_stems = ['piba', 'jiGra', 'Dama', 'tizWa', 'mana', 'yacCa', 'paSya',
@@ -46,7 +46,7 @@ RULES = [
     Anuvrtti(None, 'anga', F.Sit_adi),
     ('7.3.75', None, f('zWivu~', 'klamu~'), None, O.dirgha),
     ('7.3.76', None, F.raw('kramu~') & F.samjna('parasmaipada'), None, True),
-    ('7.3.77', None, f('izu~', 'ga\mx~', 'ya\ma~'), None, 'C'),
+    ('7.3.77', None, f('izu~', 'ga\\mx~', 'ya\\ma~'), None, 'C'),
     ('7.3.78', None, f(*_78_roots), None,
      O.yathasamkhya(_78_roots, _78_stems)),
     ('7.3.79', None, f('jYA\\', 'janI~\\'), None, 'jA'),

@@ -133,11 +133,11 @@ def test_gana():
         ('a\\da~', 'hnu\\N'),
         ('hu\\', 'gA\\'),
         ('divu~', 'gfDu~'),
-        ('zu\Y', 'kzI'),
-        ('tu\da~^', 'piSa~'),
-        ('ru\Di~^r', 'pfcI~'),
-        ('tanu~^', 'qukf\Y'),
-        ('qukrI\Y', 'graha~^'),
+        ('zu\\Y', 'kzI'),
+        ('tu\\da~^', 'piSa~'),
+        ('ru\\Di~^r', 'pfcI~'),
+        ('tanu~^', 'qukf\\Y'),
+        ('qukrI\\Y', 'graha~^'),
         ('cura~', 'tutTa~'),
     ]
     cases = []

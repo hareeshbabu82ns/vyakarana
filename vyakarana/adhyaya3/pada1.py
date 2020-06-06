@@ -28,8 +28,8 @@ BHRASHA_BHLASHA = f('wuBrASf~\\', 'wuBlASf~\\', 'Bramu~', 'kramu~',
                     'klamu~', 'trasI~', 'truwa~', 'laza~^')
 
 
-STAMBHU_STUMBHU = f('sta\mBu~', 'stu\mBu~', 'ska\mBu~', 'sku\mBu~',
-                    'sku\Y')
+STAMBHU_STUMBHU = f('sta\\mBu~', 'stu\\mBu~', 'ska\\mBu~', 'sku\\mBu~',
+                    'sku\\Y')
 
 
 RULES = [
@@ -45,8 +45,8 @@ RULES = [
     ('3.1.69', F.gana('divu~'), None, None, k_anga('Syan')),
     Va('3.1.70', BHRASHA_BHLASHA, None, None, True),
     ('3.1.73', F.gana('zu\\Y'), None, None, k_anga('Snu')),
-    ('3.1.77', F.gana('tu\da~^'), None, None, k_anga('Sa')),
-    ('3.1.78', F.gana('ru\Di~^r'), None, None, k_anga('Snam')),
+    ('3.1.77', F.gana('tu\\da~^'), None, None, k_anga('Sa')),
+    ('3.1.78', F.gana('ru\\Di~^r'), None, None, k_anga('Snam')),
     ('3.1.79', F.gana('tanu~^'), None, None, k_anga('u')),
     ('3.1.81', F.gana('qukrI\\Y'), None, None, k_anga('SnA')),
     Ca('3.1.82', STAMBHU_STUMBHU, None, None, k_anga('Snu')),

@@ -14,6 +14,6 @@ f = F.auto
 
 RULES = [
     Anuvrtti(None, F.raw('Sap'), None),
-    ('2.4.71', F.gana('a\da~'), None, None, 'lu~k'),
+    ('2.4.71', F.gana('a\\da~'), None, None, 'lu~k'),
     ('2.4.74', F.gana('hu\\'), None, None, 'Slu~'),
 ]

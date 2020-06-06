@@ -56,6 +56,7 @@ def iyan_uvan(state, index, locus):
     else:
         return uvan.apply(state, index, locus)
 
+
 iyan_uvan.category = 'tasya'
 
 GAMA_HANA_JANA = f('ga\\mx~', 'ha\\na~', 'janI~\\', 'Kanu~^', 'Gasx~')
@@ -124,7 +125,7 @@ RULES = [
         O.upadha('')),
 
     Anuvrtti(None, 'anga', 'ardhadhatuka', locus='asiddhavat'),
-    Anyatarasyam('6.4.47', None, 'Bra\sja~^', None, bhrasjo_ram),
+    Anyatarasyam('6.4.47', None, 'Bra\\sja~^', None, bhrasjo_ram),
     # ('6.4.48', None, 'a', None, F.lopa),
     # ('6.4.49', 'hal', F.antya('ya'), None, None),
     # Vibhasha('6.4.50', True, F.antya('kya'), None, None),
@@ -135,7 +136,7 @@ RULES = [
     ('6.4.78', None, 'abhyasa', F.asavarna, True),
     ('6.4.79', None, 'strI', None, True),
     Va('6.4.80', None, True, f('am', 'Sas'), True),
-    ('6.4.81', None, 'i\R', None, Sounds('yaR')),
+    ('6.4.81', None, 'i\\R', None, Sounds('yaR')),
     ('6.4.82', None, F.al('i') & anekac_asamyogapurva, None, True),
     ('6.4.83', None, F.al('u') & anekac_asamyogapurva, 'sup', True),
     # TODO: Snu
@@ -152,7 +153,7 @@ RULES = [
     Anuvrtti('abhyasa', 'anga', 'li~w', locus='asiddhavat'),
     ('6.4.120', None, at_ekahalmadhya_anadeshadi, 'kit', et_abhyasa_lopa),
     Ca('6.4.121', None, True, F.value('iTa'), True),
-    Ca('6.4.122', None, f('tF', 'YiPalA~', 'Ba\ja~^', 'trapU~\z'),
+    Ca('6.4.122', None, f('tF', 'YiPalA~', 'Ba\\ja~^', 'trapU~\\z'),
        f('kit') | F.value('iTa'), True),
     Artha('6.4.123', None, F.value('rAD'), True, True),
     Va('6.4.124', None, f('jF', 'Bramu~', 'trasI~'), True, True),

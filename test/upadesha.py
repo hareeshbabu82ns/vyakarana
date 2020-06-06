@@ -226,9 +226,9 @@ def test_anga():
 def test_dhatu():
     pairs = [
         ('BU', 'BU'),
-        ('qukf\Y', 'kf'),
-        ('sta\mBu~', 'stamB'),
-        ('qukrI\Y', 'krI'),
+        ('qukf\\Y', 'kf'),
+        ('sta\\mBu~', 'stamB'),
+        ('qukrI\\Y', 'krI'),
     ]
     for raw, value in pairs:
         d = Upadesha.as_dhatu(raw)
@@ -284,4 +284,3 @@ def test_vibhakti():
 
         for it in its:
             assert it in v.samjna
-
