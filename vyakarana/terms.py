@@ -98,6 +98,9 @@ class Upadesha(object):
     def __repr__(self):
         return "<%s('%s')>" % (self.__class__.__name__, self.value)
 
+    def __hash__(self):
+        return hash(self.value)
+
     def copy(self, **kw):
         for x in ['data', 'samjna', 'lakshana', 'ops', 'parts']:
             if x not in kw:

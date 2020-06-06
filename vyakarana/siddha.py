@@ -32,10 +32,10 @@ def asiddha_helper(state):
     had_rs = False
 
     editor = SoundEditor(state)
-    for c in editor:
+    for c in iter(editor):
         p = c.prev
-        n = c.__next__
-        n2 = n.__next__
+        n = c.next
+        n2 = n.next
 
         w, x, y, z = (p.value, c.value, n.value, n2.value)
 

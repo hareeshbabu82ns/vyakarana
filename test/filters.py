@@ -50,7 +50,7 @@ def verify(cases, filter_creator, tester):
 
 
 def term_tester(filt, data):
-    term =  Upadesha('a~').set_value(data)
+    term = Upadesha('a~').set_value(data)
     return filt.allows([term], 0)
 
 
@@ -70,23 +70,23 @@ def test_adi():
         (['al'],
             'indra agni vAyu jAne agnO Bagavat Atman lih dfS',
             '',
-        ),
+         ),
         (['ac'],
             'indra agni agnO Atman',
             'vAyu jAne Bagavat lih dfS',
-        ),
+         ),
         (['hal'],
             'vAyu jAne Bagavat lih dfS',
             'indra agni agnO Atman',
-        ),
+         ),
         (['ec'],
             'eDa ozaDi EkzvAka Oqulomi',
             'indra agni vAyu jAne agnO Bagavat Atman lih dfS',
-        ),
+         ),
         (['Sar'],
             'SItala za sarpa',
             'indra agni vAyu jAne agnO Bagavat Atman lih dfS',
-        ),
+         ),
     ]
     verify(cases, F.adi, term_tester)
 
@@ -96,23 +96,23 @@ def test_al():
         (['al'],
             'indra agni vAyu jAne agnO Bagavat Atman lih dfS',
             '',
-        ),
+         ),
         (['ac'],
             'indra agni vAyu jAne agnO',
             'Bagavat Atman lih dfS',
-        ),
+         ),
         (['hal'],
             'Bagavat Atman lih dfS',
             'indra agni vAyu jAne agnO',
-        ),
+         ),
         (['ec'],
             'jAne agnO',
             'indra agni vAyu Bagavat Atman lih dfS',
-        ),
+         ),
         (['Sar'],
             'dfS',
             'indra agni vAyu jAne agnO Bagavat Atman lih',
-        ),
+         ),
     ]
     verify(cases, F.al, term_tester)
 
@@ -130,7 +130,7 @@ def test_ekac():
 def test_gana():
     pairs = [
         ('BU', 'wvo~Svi'),
-        ('a\\da~', 'hnu\N'),
+        ('a\\da~', 'hnu\\N'),
         ('hu\\', 'gA\\'),
         ('divu~', 'gfDu~'),
         ('zu\Y', 'kzI'),
@@ -142,10 +142,10 @@ def test_gana():
     ]
     cases = []
     for i, pair in enumerate(pairs):
-         first, last = pair
-         yes = ' '.join(pair)
-         no = ' '.join(' '.join(p) for j, p in enumerate(pairs) if i != j)
-         cases.append(([first], yes, no))
+        first, last = pair
+        yes = ' '.join(pair)
+        no = ' '.join(' '.join(p) for j, p in enumerate(pairs) if i != j)
+        cases.append(([first], yes, no))
 
     verify(cases, F.gana, dhatu_tester)
 
@@ -155,11 +155,11 @@ def test_it_samjna():
         (['kit', 'Nit'],
             'kta ktvA iyaN uvaN kvasu~',
             'GaY ap yat anIyar',
-        ),
+         ),
         (['Rit'],
             'Ral Rvul',
             'tip lyuw',
-        ),
+         ),
     ]
     verify(cases, F.samjna, pratyaya_tester)
 
@@ -169,7 +169,7 @@ def test_raw():
         (['jYA\\', 'janI~\\'],
             'jYA\\ janI~\\',
             'gamx~ SF dF pF jYA janI janI~',
-        )
+         )
     ]
     verify(cases, F.raw, dhatu_tester)
 
@@ -179,7 +179,7 @@ def test_samjna():
         (['anga'],
             'nara grAma vIra',
             'nara grAma vIra',
-        )
+         )
     ]
 
     for pattern, yes, no in cases:
@@ -195,11 +195,11 @@ def test_upadha():
         (['Yam'],
             'banD granT stamB pAna',
             'granTa nara narAn',
-        ),
+         ),
         (['at'],
             'vac svap yaj',
             'granT nI paca',
-        )
+         )
     ]
     verify(cases, F.upadha, term_tester)
 
@@ -209,7 +209,7 @@ def test_value():
         (['jYA', 'jan'],
             'jYA\\ janI~\\',
             'gamx~ SF dF pF',
-        )
+         )
     ]
     verify(cases, F.value, dhatu_tester)
 
@@ -222,7 +222,7 @@ def test_and_():
         (['Yam'],
             'banD granT stamB',
             'car pAna granTa nara nayati',
-        )
+         )
     ]
     verify(cases, lambda names: F.upadha(names) & F.al('hal'),
            term_tester)
@@ -233,7 +233,7 @@ def test_or_():
         (['Yam'],
             'banD granT stamB pAna car',
             'granTa nara nayati',
-        )
+         )
     ]
     verify(cases, lambda names: F.upadha(names) | F.al('hal'),
            term_tester)
@@ -244,23 +244,23 @@ def test_not_():
         (['al'],
             '',
             'indra agni vAyu jAne agnO Bagavat Atman lih dfS',
-        ),
+         ),
         (['ac'],
             'Bagavat Atman lih dfS',
             'indra agni vAyu jAne agnO',
-        ),
+         ),
         (['hal'],
             'indra agni vAyu jAne agnO',
             'Bagavat Atman lih dfS',
-        ),
+         ),
         (['ec'],
             'indra agni vAyu Bagavat Atman lih dfS',
             'jAne agnO',
-        ),
+         ),
         (['Sar'],
             'indra agni vAyu jAne agnO Bagavat Atman lih',
             'dfS',
-        ),
+         ),
     ]
     verify(cases, lambda x: ~F.al(x), term_tester)
 

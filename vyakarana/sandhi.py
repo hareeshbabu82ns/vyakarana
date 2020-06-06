@@ -11,6 +11,7 @@ def convert(op):
         return op.apply(State([Upadesha(s + 'a~')]), 0)[0].value
     return func
 
+
 dirgha = O.dirgha.body
 iko_yan_aci = O.al_tasya('ik', 'yaR').body
 guna = convert(O.guna)
@@ -19,8 +20,9 @@ vrddhi = convert(O.vrddhi)
 
 def apply(state):
     editor = SoundEditor(state)
-    for cur in editor:
-        next = cur.__next__
+    for cur in iter(editor):
+        # next = cur.__next__
+        next = cur.next
         if next.value is None:
             continue
 

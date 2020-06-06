@@ -14,6 +14,7 @@ from collections import OrderedDict
 from vyakarana import ashtadhyayi as A
 from vyakarana.terms import Upadesha, Vibhakti
 
+
 def data_path(name):
     """Return a relative path to test file `name`."""
     TEST_DIR = os.path.dirname(__file__)
@@ -50,7 +51,8 @@ def load_forms(filename):
                 except IndexError:
                     break
         else:
-            data[dhatu] = [set(x.split('/')) if x != '_' else set() for x in paradigm]
+            data[dhatu] = [set(x.split('/')) if x != '_' else set()
+                           for x in paradigm]
 
     for dhatu, paradigm in list(data.items()):
         purusha = ['prathama', 'madhyama', 'uttama']
@@ -58,7 +60,7 @@ def load_forms(filename):
 
         for i, forms in enumerate(paradigm):
             if forms:
-                person, number = purusha[i / 3], vacana[i % 3]
+                person, number = purusha[i // 3], vacana[i % 3]
                 yield dhatu, forms, person, number
 
 
