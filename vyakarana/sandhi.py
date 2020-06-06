@@ -21,7 +21,6 @@ vrddhi = convert(O.vrddhi)
 def apply(state):
     editor = SoundEditor(state)
     for cur in iter(editor):
-        # next = cur.__next__
         next = cur.next
         if next.value is None:
             continue

@@ -50,9 +50,9 @@ def test_sound_editor_iter(editor_data):
 
 def test_sound_editor_prev_next(editor_data):
     data, terms, state, editor = editor_data
-    for i, index in enumerate(editor):
+    for i, index in enumerate(iter(editor)):
         prev = index.prev
-        next = index.__next__
+        next = index.next
         if i > 0:
             assert prev.value == data[i - 1]
         if i < len(data) - 1:

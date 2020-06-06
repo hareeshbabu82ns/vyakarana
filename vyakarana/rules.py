@@ -143,7 +143,26 @@ class Rule(object):
             return False
 
         # Condition 2
+        # print('self: ', end=' ')
+        # self.pprint()
+        # print('other: ', end=' ')
+        # other.pprint()
+
+        # for f1 in self.filters:
+        #     print('cheking for filter:', f1)
+        #     foundFilter = False
+        #     for f2 in other.filters:
+        #         print('comparing in filter:', f2)
+        #         if f2.subset_of(f1):
+        #             foundFilter = True
+        #             break
+        #     if not foundFilter:
+        #         return False
+
         filter_pairs = list(zip(self.filters, other.filters))
+        # for f1, f2 in filter_pairs:
+        #     print('filter pairs:', f1, f2)
+        # print('\tsub set:', all(f2.subset_of(f1) for f1, f2 in filter_pairs))
         if not all(f2.subset_of(f1) for f1, f2 in filter_pairs):
             return False
 
